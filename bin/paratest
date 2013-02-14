@@ -1,11 +1,12 @@
 #!/usr/bin/env php
 <?php
-
+set_include_path('/var/www/ult' . PATH_SEPARATOR . '/var/www/ult/tests'. PATH_SEPARATOR . '/var/www/ult/tests/ibm'. PATH_SEPARATOR . '/var/www/ult/tests/PHPUnit' . PATH_SEPARATOR . get_include_path());
 $files = array(
     __DIR__ . '/../../vendor/autoload.php',
     __DIR__ . '/../../../autoload.php',
     dirname(__DIR__) . '/vendor/autoload.php'
 );
+require_once 'PHPUnit/Autoload.php';
 
 $found = false;
 
@@ -33,3 +34,4 @@ use ParaTest\Console\ParaTestApplication;
 
 $app = new ParaTestApplication();
 $app->run();
+
